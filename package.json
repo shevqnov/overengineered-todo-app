@@ -1,0 +1,25 @@
+{
+  "name": "parcel-ts-react",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "parcel ./src/index.html",
+    "build": "parcel build ./src/index.html"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.9",
+    "@types/react-dom": "^16.9.2",
+    "@types/react-redux": "^7.1.5",
+    "@types/redux": "^3.6.0",
+    "parcel-bundler": "^1.12.4",
+    "typescript": "^3.6.4"
+  },
+  "dependencies": {
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "react-redux": "^7.1.1",
+    "redux": "^4.0.4",
+    "typesafe-actions": "^4.4.2"
+  }
+}
