@@ -4,14 +4,14 @@ interface Props {
   id: string
   title: string
   completed: boolean
-  checkTodo: (id: string) => void
+  toggleTodo: (id: string) => void
 }
 
-const Todo: React.FC<Props> = ({title, completed, checkTodo, id}) => {
+const Todo: React.FC<Props> = ({title, completed, toggleTodo, id}) => {
   return (
     <li>
       <span>{title}</span>
-      <input type="checkbox" checked={completed} onChange={() => checkTodo(id)}/>
+      <input type="checkbox" checked={completed} onChange={() => toggleTodo(id)}/>
     </li>
   )
 }

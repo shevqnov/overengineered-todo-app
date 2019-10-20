@@ -1,11 +1,10 @@
-import { TodoState, View } from './types';
+import { TodoState } from './types';
 import { getType, Reducer, ActionType } from 'typesafe-actions';
 import * as actions from "./actions";
 
 const initialState: TodoState = {
   todos: {},
   todoIds: [],
-  currentView: View.All
 }
 
 export type TodoActions = ActionType<typeof actions>
@@ -25,14 +24,14 @@ const reducer: Reducer<TodoState, TodoActions> = (state = initialState, action) 
           action.payload.id
         ]
       }
-    case getType(actions.checkTodo):
+    case getType(actions.toggleTodo):
       return {
         ...state,
         todos: {
           ...state.todos,
           [action.payload]: {
             ...state.todos[action.payload],
-            completed: true
+            completed: !state.todos[action.payload].completed
           }
         }
       }

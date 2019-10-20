@@ -4,10 +4,15 @@ import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import store from './store'
 import TodoListContainer from './containers/TodoListContainer'
+import AddTodo from './components/AddTodo'
+import './index.css'
+import VisibilityFilter from './components/VisibilityFilter'
 
 const TodoApp: React.FC = () => (
   <Provider store={store}>
     <TodoListContainer />
+    <AddTodo />
+    <VisibilityFilter />
   </Provider>
 )
 
