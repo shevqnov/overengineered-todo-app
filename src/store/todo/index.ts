@@ -35,6 +35,17 @@ const reducer: Reducer<TodoState, TodoActions> = (state = initialState, action) 
           }
         }
       }
+
+    case getType(actions.removeTodo): {
+      const {payload : id} = action
+      const {todos} = {...state} 
+      delete todos[id]
+      return {
+        ...state,
+        todos,
+        todoIds: state.todoIds.filter(todoId => todoId !== id)
+      }
+    }
     default: return {
       ...state
     }

@@ -10,9 +10,9 @@ import VisibilityFilter from './components/VisibilityFilter'
 
 const TodoApp: React.FC = () => (
   <Provider store={store}>
+    <VisibilityFilter />
     <TodoListContainer />
     <AddTodo />
-    <VisibilityFilter />
   </Provider>
 )
 

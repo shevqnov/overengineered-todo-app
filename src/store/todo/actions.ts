@@ -3,6 +3,7 @@ import { Todo } from './types'
 
 export const addTodo = fsa('todo/add')<Todo>()
 export const toggleTodo = fsa('todo/toggle')<string>()
+export const removeTodo = fsa('todo/remove')<string>()
 
 export const fetchTodos = createAsyncAction(
   'todo/request',

@@ -13,9 +13,11 @@ const filtersList = [
 const VisibilityFilter = () => {
   const currentView = useSelector<AppState, View>(state => state.visibilityFilter)
   const dispatch  = useDispatch()
+
   const onChange = React.useCallback((event: React.ChangeEvent<HTMLSelectElement>) => {
-    dispatch(setVisibility(Number(event.currentTarget.value) as unknown as View))
+    dispatch(setVisibility(Number(event.currentTarget.value) as View))
   }, [dispatch])
+
   return (
     <div>
       <h4>Choose todos visibility</h4>

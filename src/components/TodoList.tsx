@@ -8,18 +8,19 @@ export interface StateProps {
 
 export interface DispatchProps {
   toggleTodo: (id: string) => void
+  removeTodo: (id: string) => void
 }
 
 export interface OwnProps {}
 
-const TodoList: React.FC<StateProps & OwnProps & DispatchProps> = ({todoList, toggleTodo}) => {
+const TodoList: React.FC<StateProps & OwnProps & DispatchProps> = ({todoList, toggleTodo, removeTodo}) => {
 
   return(
     <div>
       <h3>Todo List</h3>
       <ul>
         {todoList.map(todo => (
-          <TodoComponent key={todo.id} {...todo} toggleTodo={toggleTodo} />
+          <TodoComponent key={todo.id} {...todo} removeTodo={removeTodo} toggleTodo={toggleTodo} />
           ))}
       </ul>
     </div>

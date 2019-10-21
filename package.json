@@ -13,6 +13,7 @@
     "@types/react-redux": "^7.1.5",
     "@types/redux": "^3.6.0",
     "parcel-bundler": "^1.12.4",
+    "sass": "^1.23.0",
     "typescript": "^3.6.4"
   },
   "dependencies": {
