@@ -17,7 +17,6 @@ const TodoList: React.FC<StateProps & OwnProps & DispatchProps> = ({todoList, to
 
   return(
     <div>
-      <h3>Todo List</h3>
       <ul>
         {todoList.map(todo => (
           <TodoComponent key={todo.id} {...todo} removeTodo={removeTodo} toggleTodo={toggleTodo} />

@@ -1,3 +1,4 @@
+import { TodoActions } from './index';
 import { TodoState } from './types';
 import { getType, Reducer, ActionType } from 'typesafe-actions';
 import * as actions from "./actions";
@@ -24,6 +25,7 @@ const reducer: Reducer<TodoState, TodoActions> = (state = initialState, action) 
           action.payload.id
         ]
       }
+
     case getType(actions.toggleTodo):
       return {
         ...state,
@@ -46,6 +48,7 @@ const reducer: Reducer<TodoState, TodoActions> = (state = initialState, action) 
         todoIds: state.todoIds.filter(todoId => todoId !== id)
       }
     }
+
     default: return {
       ...state
     }
@@ -53,3 +56,4 @@ const reducer: Reducer<TodoState, TodoActions> = (state = initialState, action) 
 }
 
 export default reducer
+

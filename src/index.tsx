@@ -9,11 +9,14 @@ import './index.css'
 import VisibilityFilter from './components/VisibilityFilter'
 
 const TodoApp: React.FC = () => (
-  <Provider store={store}>
-    <VisibilityFilter />
-    <TodoListContainer />
-    <AddTodo />
-  </Provider>
+  <div className='app'>
+    <Provider store={store}>
+      <h2>Todo List</h2>
+      <VisibilityFilter />
+      <AddTodo />
+      <TodoListContainer />
+    </Provider>
+  </div>
 )
 
 render(<TodoApp />, document.getElementById("root"))
