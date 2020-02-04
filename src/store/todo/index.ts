@@ -1,4 +1,3 @@
-import { TodoActions } from './index';
 import { TodoState } from './types';
 import { getType, Reducer, ActionType } from 'typesafe-actions';
 import * as actions from "./actions";
@@ -12,7 +11,7 @@ export type TodoActions = ActionType<typeof actions>
 
 const reducer: Reducer<TodoState, TodoActions> = (state = initialState, action) => {
   switch (action.type) {
-    
+
     case getType(actions.addTodo):
       return {
         ...state,
@@ -39,8 +38,8 @@ const reducer: Reducer<TodoState, TodoActions> = (state = initialState, action) 
       }
 
     case getType(actions.removeTodo): {
-      const {payload : id} = action
-      const {todos} = {...state} 
+      const { payload: id } = action
+      const { todos } = { ...state }
       delete todos[id]
       return {
         ...state,
